@@ -1,0 +1,32 @@
+@mixin elementSize($width: 40px, $height: 40px) {
+  width: $width;
+  min-width: $width;
+  max-width: $width;
+  height: $height;
+  min-height: $height;
+  max-height: $height;
+}
+
+@mixin d-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin d-items-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin d-items-b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin transition-effect($effect : 'all', $timing: '0.2s', $animation: 'ease-in-out') {
+  transition: $effect $timing $animation;
+  -webkit-transition: $effect $timing $animation;
+  -moz-transition: $effect $timing $animation;
+  -o-transition: $effect $timing $animation;
+}

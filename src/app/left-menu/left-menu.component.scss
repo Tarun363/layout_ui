@@ -1,0 +1,77 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.layoutContainer {
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: baseline;
+  background-color: darkslategray;
+  @include transition-effect;
+
+  .menuContainer {
+    @include d-items-c;
+    flex-direction: column;
+    padding: 15px 0;
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+    border-radius: 50px;
+    background-color: white;
+    @include transition-effect('width');
+
+    .menu-item-group {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .menu-item-icon {
+        @include elementSize();
+        @include d-items-c;
+        margin: 5px;
+        border-radius: 50%;
+        @include transition-effect;
+
+        &:hover {
+          box-shadow: 0 0 4px #fff;
+        }
+      }
+
+      .menu-item-name {
+        width: 100%;
+        font-weight: 600;
+        margin-left: 5px;
+      }
+
+      &.home:hover .menu-item-icon,
+      &.home.active .menu-item-icon {
+        color: white;
+        background-color: deeppink;
+      }
+
+      &.user:hover .menu-item-icon,
+      &.user.active .menu-item-icon {
+        color: white;
+        background-color: rgb(30, 43, 226);
+      }
+
+      &.envelope:hover .menu-item-icon,
+      &.envelope.active .menu-item-icon {
+        color: white;
+        background-color: #08bb08f0;
+      }
+
+      &.question:hover .menu-item-icon,
+      &.question.active .menu-item-icon {
+        color: white;
+        background-color: rgba(236, 25, 25, 0.884);
+      }
+
+      &.gear:hover .menu-item-icon,
+      &.gear.active .menu-item-icon {
+        color: white;
+        background-color: gray;
+      }
+    }
+  }
+}

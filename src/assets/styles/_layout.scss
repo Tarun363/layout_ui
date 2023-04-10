@@ -1,0 +1,128 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+
+
+$left-menu-min-size: var(--left-menu-min-size);
+$left-menu-max-size: var(--left-menu-max-size);
+$layout-settings-section-height: var(--layout-settings-section-height);
+
+.layout-settings-section {
+  position: fixed;
+  top: 0;
+  min-width: 100%;
+  min-height: $layout-settings-section-height;
+  background-color: lightgray;
+  padding: 0 20px;
+}
+
+.layout-section {
+  position: fixed;
+  top: $layout-settings-section-height;
+  display: flex;
+  width: 100%;
+  height: calc(100% - var(--layout-settings-section-height));
+  overflow: hidden;
+
+  .left-menu-section {
+    overflow: hidden auto;
+
+    &[data-layout-placement="top"] {
+      .layoutContainer {
+        align-items: baseline;
+      }
+    }
+
+    &[data-layout-placement="center"] {
+      .layoutContainer {
+        align-items: center;
+      }
+    }
+
+    &[data-layout-placement="bottom"] {
+      .layoutContainer {
+        align-items: flex-end;
+      }
+    }
+
+    &[data-layout-placement="full"] {
+      .layoutContainer {
+        align-items: unset;
+      }
+    }
+  }
+
+  .main-menu-section {
+    overflow: hidden auto;
+  }
+
+  &[data-layout-size="min"] {
+    .left-menu-section {
+      width: $left-menu-min-size;
+    }
+
+    .main-menu-section {
+      width: calc(100% - var(--left-menu-min-size));
+    }
+
+    .menuContainer {
+      .menu-item-group {
+        .menu-item-name {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &[data-layout-size="max"] {
+    .left-menu-section {
+      width: $left-menu-max-size;
+    }
+
+    .main-menu-section {
+      width: calc(100% - var(--left-menu-max-size));
+    }
+
+    .menuContainer {
+      align-items: baseline !important;
+      background-color: unset !important;
+
+      .menu-item-group {
+        width: 100%;
+        margin: 5px 0;
+        background-color: white;
+        border-radius: 50px;
+
+        .menu-item-name {
+          display: block;
+        }
+
+        // &:hover {
+        //   color: white;
+        //   box-shadow: 0 0 2px #fff;
+        // }
+
+        // &.home:hover {
+        //   background-color: #ff1493b8;
+        // }
+
+        // &.user:hover {
+        //   background-color: rgba(30, 43, 226, 0.527);
+        // }
+
+        // &.envelope:hover {
+        //   background-color: #08bb0886;
+        // }
+
+        // &.question:hover {
+        //   background-color: rgba(236, 25, 25, 0.486);
+        // }
+
+        // &.gear:hover {
+        //   background-color: rgba(128, 128, 128, 0.548);
+        // }
+
+      }
+    }
+  }
+}

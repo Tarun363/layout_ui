@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./fonts";
+@import "./variables";
+@import "./layout";
+@import "./mixins";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.d-center {
+  @include d-center;
+}
+
+.d-items-c {
+  @include d-items-c;
+}
+
+.d-items-b {
+  @include d-items-b;
+}
+
+.btn,
+.btn:focus {
+  outline: unset !important;
+  box-shadow: unset !important;
+}

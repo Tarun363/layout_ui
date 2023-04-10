@@ -1,0 +1,8 @@
+.btn-group .btn {
+  border: 1px solid #ccc;
+
+  &.active {
+    color: white;
+    background-color: rgba(0, 0, 255, 0.822) !important;
+  }
+}

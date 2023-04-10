@@ -1,0 +1,42 @@
+<div>
+    <div class="layout-settings-section d-items-b">
+        <div>
+            <div class="btn-group size" role="group">
+                <button type="button" class="btn bg-white min active" (click)="onLayoutSizeChange('min')">
+                    Minimise
+                </button>
+                <button type="button" class="btn bg-white max" (click)="onLayoutSizeChange('max')">
+                    Maximise
+                </button>
+            </div>
+        </div>
+        <div>
+            <h6 class="mb-0">Layout settings</h6>
+        </div>
+        <div>
+            <div class="btn-group position" role="group">
+                <button type="button" class="btn bg-white full" (click)="onLayoutPositionChange('full')">
+                    Full
+                </button>
+                <button type="button" class="btn bg-white top active" (click)="onLayoutPositionChange('top')">
+                    Top
+                </button>
+                <button type="button" class="btn bg-white center" (click)="onLayoutPositionChange('center')">
+                    Center
+                </button>
+                <button type="button" class="btn bg-white bottom" (click)="onLayoutPositionChange('bottom')">
+                    Bottom
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="layout-section" data-layout-size="min">
+        <div class="left-menu-section" data-layout-placement="top">
+            <app-left-menu></app-left-menu>
+        </div>
+        <div class="main-menu-section">
+            <app-main-section></app-main-section>
+        </div>
+    </div>
+</div>

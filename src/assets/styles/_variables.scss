@@ -1,0 +1,17 @@
+:root {
+  --layout-settings-section-height: 60px;
+  --left-menu-min-size: 80px;
+  --left-menu-max-size: 220px;
+}
+
+
+$font_family_roboto: 'Roboto',
+sans-serif;
+
+$font_family_openSans: 'Open Sans',
+sans-serif;
+
+$font_family_arima: 'Arima',
+cursive;
+
+$font_family: $font_family_openSans;
